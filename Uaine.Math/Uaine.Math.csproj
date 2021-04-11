@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Constants\Sci\Physics\**" />
+    <EmbeddedResource Remove="Constants\Sci\Physics\**" />
+    <None Remove="Constants\Sci\Physics\**" />
+  </ItemGroup>
+
+</Project>
