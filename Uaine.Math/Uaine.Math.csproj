@@ -10,4 +10,8 @@
     <None Remove="Constants\Sci\Physics\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MathNet.Numerics" Version="4.15.0" />
+  </ItemGroup>
+
 </Project>

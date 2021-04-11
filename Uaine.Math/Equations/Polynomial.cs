@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Uaine.Math.Equations
 {
-    public class Polynomial : Function
+    public abstract class Polynomial : Function
     {
         protected List<float> coefficients;
         int _deg = 1;
@@ -25,5 +25,8 @@ namespace Uaine.Math.Equations
             }
             return sum;
         }
+
+        public abstract void Solve(float[] x, float[] y);
+        public abstract void SolveLeastSquares(float[] x, float[] y);
     }
 }
