@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Uaine.Math.Equations;
+using Uaine.Math.Interpolation;
 
 namespace Test
 {
@@ -19,6 +20,11 @@ namespace Test
             float[] c = eq.Coefficients;
             Console.WriteLine(c[0]);
             Console.WriteLine(c[1]);
+
+            Console.WriteLine();
+            y = new float[] { 0, 2};
+            float ynew = LinInterpolation.UnitInterpolation(0.5f, y);
+            Console.WriteLine(ynew);
 
             Console.Read();
         }
