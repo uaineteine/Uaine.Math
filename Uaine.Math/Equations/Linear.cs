@@ -18,15 +18,15 @@ namespace Uaine.Math.Equations
             double a12 = x[0] + x[1]; //sumxi
             double a21 = a12;
             double a11 = x[0] * x[0] + x[1] * x[1];
-            double a22 = 1; 
+            double a22 = x.Length; 
             var A = MathNet.Numerics.LinearAlgebra.CreateMatrix.DenseOfArray(
                 new double[,]
                 {
                     { a11, a12 },
                     { a21, a22 }
                 });
-            double b1 = y[0] + y[1];
-            double b2 = y[0]*x[0] + y[1]*x[1];
+            double b2 = y[0] + y[1];
+            double b1 = y[0]*x[0] + y[1]*x[1];
             var b = MathNet.Numerics.LinearAlgebra.CreateVector.Dense(
                 new double[]
                 {

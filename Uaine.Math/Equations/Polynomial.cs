@@ -6,6 +6,7 @@ namespace Uaine.Math.Equations
     public abstract class Polynomial : Function
     {
         protected List<float> coefficients;
+        public float[] Coefficients { get => coefficients.ToArray(); }
         int _deg = 1;
         public int Degree { get => _deg; }
 
