@@ -9,16 +9,12 @@ namespace Uaine.Math.Equations
         {
         }
 
-        public override void Solve(float[] x, float[] y)
-        {
-            throw new NotImplementedException();
-        }
-        public override void SolveLeastSquares(float[] x, float[] y)
+        public new void SolveLeastSquares(float[] x, float[] y)
         {
             double a12 = x[0] + x[1]; //sumxi
             double a21 = a12;
             double a11 = x[0] * x[0] + x[1] * x[1];
-            double a22 = x.Length; 
+            double a22 = x.Length;
             var A = MathNet.Numerics.LinearAlgebra.CreateMatrix.DenseOfArray(
                 new double[,]
                 {
@@ -26,7 +22,7 @@ namespace Uaine.Math.Equations
                     { a21, a22 }
                 });
             double b2 = y[0] + y[1];
-            double b1 = y[0]*x[0] + y[1]*x[1];
+            double b1 = y[0] * x[0] + y[1] * x[1];
             var b = MathNet.Numerics.LinearAlgebra.CreateVector.Dense(
                 new double[]
                 {
@@ -35,8 +31,8 @@ namespace Uaine.Math.Equations
 
             //solve
             var X = A.Solve(b);
-            coefficients[0] = (float)X[0];
-            coefficients[1] = (float)X[1];
+            for (int i = 0; i < _deg + 1; i++)
+                coefficients[i] = (float)X[i];
         }
     }
 }

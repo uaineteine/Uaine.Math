@@ -5,7 +5,7 @@ using Uaine.Math.Equations;
 
 namespace Uaine.Math.Interpolation
 {
-    public static class LinInterpolation
+    public class LinInterpolation
     {
         public static float UnitInterpolation(float xi, float[] yvals)
         {
