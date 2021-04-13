@@ -34,7 +34,7 @@ namespace Uaine.Math.Equations
             return sum;
         }
 
-        public void SolveLeastSquares(float[] x, float[] y)
+        public override void SolveLeastSquares(float[] x, float[] y)
         {
             int n = _deg + 1;
             int nn = 2 * _deg;

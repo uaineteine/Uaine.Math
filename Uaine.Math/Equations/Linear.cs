@@ -9,7 +9,7 @@ namespace Uaine.Math.Equations
         {
         }
 
-        public new void SolveLeastSquares(float[] x, float[] y)
+        public override void SolveLeastSquares(float[] x, float[] y)
         {
             double a12 = x[0] + x[1]; //sumxi
             double a21 = a12;

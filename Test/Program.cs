@@ -24,7 +24,8 @@ namespace Test
 
             Console.WriteLine();
             y = new float[] { 0, 2};
-            float ynew = LinInterpolation.UnitInterpolation(0.5f, y);
+            PolyInterpolation intp = new PolyInterpolation(1);
+            float ynew = intp.UnitInterpolation(0.5f, y);
             Console.WriteLine(ynew);
 
             Console.Read();

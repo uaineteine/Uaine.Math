@@ -5,11 +5,16 @@ using Uaine.Math.Equations;
 
 namespace Uaine.Math.Interpolation
 {
-    public class LinInterpolation
+    public class Interpolator
     {
-        public static float UnitInterpolation(float xi, float[] yvals)
+        protected Function eq;
+        public Interpolator(Function equation)
         {
-            Linear eq = new Linear(0, 0);
+            eq = equation;
+        }
+
+        public float UnitInterpolation(float xi, float[] yvals)
+        {
             eq.SolveLeastSquares(new float[] { 0, 1 }, yvals);
             return eq.f(xi);
         }
