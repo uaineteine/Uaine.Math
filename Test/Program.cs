@@ -28,6 +28,14 @@ namespace Test
             float ynew = intp.UnitInterpolation(0.5f, y);
             Console.WriteLine(ynew);
 
+            Console.WriteLine();
+            FourierSeries f = new FourierSeries(1);
+            x = new float[] { 0, 0.25f, 0.5f };
+            y = new float[] { 1, 2, -1 };
+            f.SolveLeastSquares(x, y);
+            Console.WriteLine(f.Ak[0]);
+            Console.WriteLine(f.Bk[0]);
+
             Console.Read();
         }
     }

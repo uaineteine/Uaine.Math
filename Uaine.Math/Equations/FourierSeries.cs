@@ -7,7 +7,7 @@ namespace Uaine.Math.Equations
         protected List<float> ak;
         protected List<float> bk;
         public float[] Ak { get => ak.ToArray(); }
-        public float[] Bk { get => ak.ToArray(); }
+        public float[] Bk { get => bk.ToArray(); }
         protected int _deg = 1;
         public int Degree { get => _deg; }
 
@@ -21,7 +21,7 @@ namespace Uaine.Math.Equations
         {
             this.ak = new List<float>();
             this.bk = new List<float>();
-            for (int i = 0; i < deg + 1; i++)
+            for (int i = 0; i < deg; i++)
             {
                 this.ak.Add(0);
                 this.bk.Add(0);
@@ -42,17 +42,18 @@ namespace Uaine.Math.Equations
         //Jai and Jbi are the same
         protected static double Ka(int k, float xi)
         {
-            return System.Math.Sin(phi(k, xi));
+            return System.Math.Sin(phi(k+1, xi));
         }
 
         protected static double Kb(int k, float xi)
         {
-            return System.Math.Cos(phi(k, xi));
+            return System.Math.Cos(phi(k+1, xi));
         }
 
-        public static double phi(int k, float xi)
+        public static double phi(int k, double xi)
         {
-            return 2 * System.Math.PI * k * xi;
+            double phase = 2 * System.Math.PI * k * xi;
+            return phase;
         }
 
         public override void SolveLeastSquares(float[] x, float[] y)
@@ -96,18 +97,18 @@ namespace Uaine.Math.Equations
                     {
                         double Jbi = Kb(i, x[k]);
                         double Kai = Ka(j, x[k]);
-                        a[i, j] += Jbi * Kai;
+                        a[ii, j] += Jbi * Kai;
                     }
                 }
-                for (int jj = 0; jj < _deg; jj++)
+                for (int j = 0; j < _deg; j++)
                 {
-                    int j = jj + _deg;
-                    a[i, j] = 0;
+                    int jj = j + _deg;
+                    a[ii, jj] = 0;
                     for (int k = 0; k < n; k++)
                     {
                         double Jbi = Kb(i, x[k]);
-                        double Kbi = Kb(jj, x[k]);
-                        a[i, j] += Jbi * Kbi;
+                        double Kbi = Kb(j, x[k]);
+                        a[ii, jj] += Jbi * Kbi;
                     }
                 }
             }
@@ -122,7 +123,7 @@ namespace Uaine.Math.Equations
                 for (int k = 0; k < n; k++)
                 {
                     double Jai = Ka(i, x[k]);
-                    b[i] += Jai*y[k];
+                    b[i] += Jai * y[k];
                     double Jbi = Kb(i, x[k]);
                     b[j] += Jbi * y[k];
                 }
@@ -135,7 +136,7 @@ namespace Uaine.Math.Equations
             {
                 ak[i] = (float)X[i];
                 int j = i + _deg;
-                bk[i[ = (float)X[j];
+                bk[i] = (float)X[j];
 
             }
         }
