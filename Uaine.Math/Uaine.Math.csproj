@@ -10,12 +10,19 @@
     <FileVersion>0.2.1.0</FileVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Description>A C# .NET standard project for mathematical functions, least squares and scientific constants</Description>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/uaineteine/Uaine.Math/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/uaineteine/Uaine.Math/</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="Constants\Sci\Physics\**" />
     <EmbeddedResource Remove="Constants\Sci\Physics\**" />
     <None Remove="Constants\Sci\Physics\**" />
+    <None Include="..\icon\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
     <None Include="..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
