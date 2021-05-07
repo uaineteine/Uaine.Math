@@ -1,0 +1,4 @@
+--1.0.1--
+*Added generic interpolator method
+*Package icon
+*Readme update
