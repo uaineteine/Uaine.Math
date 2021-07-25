@@ -1,4 +1,7 @@
---1.0.1--
+--0.3--
+added more constants in astro and physics
+
+--0.2.1--
 *Added generic interpolator method
 *Package icon
 *Readme update
