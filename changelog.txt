@@ -1,3 +1,7 @@
+--0.4--
+Indexing conversion update for 2d to 1d and vice versa
+Pythag formulas added
+
 --0.3--
 added more constants in astro and physics
 
