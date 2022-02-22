@@ -1,3 +1,7 @@
+--0.4.1--
+Constants for astro distances and planet radii added
+Pythag formula for n dim added
+
 --0.4--
 Indexing conversion update for 2d to 1d and vice versa
 Pythag formulas added

@@ -10,5 +10,14 @@
         {
             return System.Math.Sqrt(a * a + b * b + c * c);
         }
+        public static double PythagNDim(double[] values, int n) //return c
+        {
+            double sum = 0;
+            for (int i = 0; i < n; i++)
+            {
+                sum += values[i]*values[i];
+            }
+            return System.Math.Sqrt(sum);
+        }
     }
 }
