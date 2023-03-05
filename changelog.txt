@@ -1,3 +1,7 @@
+--0.4.2--
+Updated dependency math package
+Added a few chemistry constants
+
 --0.4.1--
 Constants for astro distances and planet radii added
 Pythag formula for n dim added
